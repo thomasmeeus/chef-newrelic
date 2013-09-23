@@ -6,7 +6,7 @@ if node['newrelic']['server_monitoring']['license'] != "" then
       owner 'root'
       mode '0640'
       notifies :restart, "service[newrelic-daemon]"
-      notifies :restart, "service[php-fpm]"
+      notifies :restart, "service[php5-fpm]"
     end
 
     package "newrelic-php5" do
