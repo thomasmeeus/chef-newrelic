@@ -10,15 +10,18 @@ if node['newrelic']['server_monitoring']['license'] != "" then
     end
 
     package "newrelic-php5" do
-        action :install
+        action [ :enable, :start ]
+        supports :start => true, :stop => true, :restart => true
     end
 
     service "newrelic-daemon" do
-        action [ :enable, :start, :restart ]
+        action [ :enable, :start ]
+        supports :start => true, :stop => true, :restart => true
     end
 
     service "php5-fpm" do
-        action [ :enable, :start, :restart ]
+        action [ :enable, :start ]
+        supports :start => true, :stop => true, :restart => true
     end
 end
 
