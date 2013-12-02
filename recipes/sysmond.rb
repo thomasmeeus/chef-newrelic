@@ -13,8 +13,4 @@ if node['newrelic']['server_monitoring']['license'] != "" then
       action [ :enable, :start ]
       supports :start => true, :stop => true, :restart => true
     end
-    service "newrelic-daemon" do
-        action [ :enable, :start ]
-        supports :start => true, :stop => true, :restart => true
-    end
 end
