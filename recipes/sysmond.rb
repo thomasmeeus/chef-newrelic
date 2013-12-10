@@ -5,7 +5,6 @@ if node['newrelic']['server_monitoring']['license'] != "" then
       source 'nrsysmond.cfg.erb'
       owner 'root'
       mode '0640'
-      notifies :restart, "service[newrelic-daemon]"
       notifies :restart, "service[newrelic-sysmond]"
     end
 
