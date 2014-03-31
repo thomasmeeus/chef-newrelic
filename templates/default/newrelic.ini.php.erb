@@ -167,7 +167,7 @@ newrelic.daemon.logfile = "/var/log/newrelic/newrelic-daemon.log"
 ;          PEM-encoded certificate file, or a directory that contains a list
 ;          of such files, using the following two options.
 ;
-newrelic.daemon.ssl = <%= node['newrelic']['application_monitoring']['daemon']['appname'] %>
+newrelic.daemon.ssl = <%= node['newrelic']['application_monitoring']['daemon']['ssl'] %>
 
 ;
 ; Setting: newrelic.daemon.ssl_ca_path
@@ -301,7 +301,7 @@ newrelic.daemon.ssl = <%= node['newrelic']['application_monitoring']['daemon']['
 ;          collection. This is only objeyed if the error collector is enabled
 ;          above and the account subscription level permits error trapping.
 ;
-;newrelic.error_collector.record_database_errors = false
+newrelic.error_collector.record_database_errors = <%= node['newrelic']['application_monitoring']['daemon']['record_database_errors'] %>
 
 ;
 ; Setting: newrelic.error_collector.prioritize_api_errors
@@ -394,7 +394,7 @@ newrelic.daemon.ssl = <%= node['newrelic']['application_monitoring']['daemon']['
 ; Info   : Sets the threshold above which the New Relic agent will record a
 ;          stack trace for a transaction trace.
 ;
-;newrelic.transaction_tracer.stack_trace_threshold = 500
+newrelic.transaction_tracer.stack_trace_threshold = <%= node['newrelic']['application_monitoring']['daemon']['stack_trace_threshold'] %>
 
 ;
 ; Setting: newrelic.transaction_tracer.explain_threshold
@@ -407,7 +407,7 @@ newrelic.daemon.ssl = <%= node['newrelic']['application_monitoring']['daemon']['
 ;          base for slow SQL. This latter feature may not be active yet, please
 ;          refer to the agent release notes to see when it becomes available.
 ;
-;newrelic.transaction_tracer.explain_threshold = 500
+newrelic.transaction_tracer.explain_threshold = <%= node['newrelic']['application_monitoring']['daemon']['stack_trace_threshold'] %>
 
 ;
 ; Setting: newrelic.transaction_tracer.record_sql
