@@ -4,7 +4,7 @@ if node['newrelic']['server_monitoring']['license'] != "" then
     template "#{node['php']['ext_conf_dir']}/newrelic.ini" do
       source 'newrelic.ini.php.erb'
       owner 'root'
-      mode '0640'
+      mode '0644'
       notifies :restart, "service[newrelic-daemon]"
       notifies :restart, "service[php5-fpm]"
     end
